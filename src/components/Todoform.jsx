@@ -22,6 +22,7 @@ export default function Todoform() {
         addTodo(newTodo)
         setNewTodo('')
         }
+
     const deleteTodo =(id) => {
         setTodos(currentTodos => {
             return(
@@ -32,10 +33,11 @@ export default function Todoform() {
     
 
     return (
-        <div>
-            <div>
+        <div className='form'>
+            <h1>Daily To-Do List</h1>
+            <div >
                 <form onSubmit={submitHandler}>
-                    <label>Add Todo
+                    <label>Add Todo:
                         <input type="text" 
                         onChange={(e) => setNewTodo(e.target.value)}
                         value={newTodo}

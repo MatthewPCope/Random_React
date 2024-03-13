@@ -4,5 +4,14 @@ body{
   display: flex;
   justify-content: center;
   margin-top: 200px;
+  font-family: 'Acme', sans-serif;
 }
+
+.form{
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  padding: 5px
+}
+
 
