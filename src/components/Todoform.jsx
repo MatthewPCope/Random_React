@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import TodoList from './TodoList'
 
 export default function Todoform() {
 
@@ -30,6 +31,7 @@ export default function Todoform() {
             )
         })
     }
+
     
 
     return (
@@ -43,20 +45,11 @@ export default function Todoform() {
                         value={newTodo}
                         id='todo'/>
                     </label>
+                <button>Add</button>
                 </form>
             </div>
             <div>
-                <ul>
-                    <li>
-                        {todos.map(
-                            todo=> {
-                                return (
-                                    <li key={todo.id}>{todo.title}<button onClick={() => deleteTodo(todo.id)}>delete</button></li>
-                                    )
-                                }
-                                )}
-                    </li>
-                </ul>
+                <TodoList todos={todos} deleteTodo={deleteTodo} />
                                 
             </div>
         </div>
