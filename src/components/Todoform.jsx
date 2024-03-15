@@ -16,6 +16,20 @@ export default function Todoform() {
         })
     }
 
+    const toggleTodo = (id, completed) => {
+        setTodos((currentTodos) => {
+            return (
+                currentTodos.map(todo => {
+                    if (todo.id === id) {
+                        return { ...todo, completed}
+                    }
+                    return todo
+                })
+            )
+        })
+    }
+
+
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -49,7 +63,7 @@ export default function Todoform() {
                 </form>
             </div>
             <div>
-                <TodoList todos={todos} deleteTodo={deleteTodo} />
+                <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
                                 
             </div>
         </div>

@@ -1,23 +1,22 @@
+import TodoItem from "./TodoItem"
 
+export default function TodoList({todos, deleteTodo, toggleTodo}) {
 
-export default function TodoList({todos, deleteTodo}) {
-
-    
     
     
     return (
         <div>
             <ul>
-                    <li>
-                        {todos.map(
-                            todo=> {
-                                return (
-                                    <li key={todo.id}>{todo.title}<button onClick={() => deleteTodo(todo.id)}>delete</button></li>
-                                    )
-                                }
-                                )}
-                    </li>
-                </ul>
+                
+                    {todos.map(
+                        todo=> {
+                            return (
+                                <TodoItem {...todo} key={todo.id} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>                                )
+                            }
+                            )}
+                
+            </ul>
         </div>
     )
 }
+
