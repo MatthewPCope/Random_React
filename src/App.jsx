@@ -1,4 +1,5 @@
-import Todoform from "./components/Todoform"
+import SignalList from "./components/SignalList"
+// import Todoform from "./components/Todoform"
 
 
 
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Todoform />
+      <SignalList />
     </>
   )
 }

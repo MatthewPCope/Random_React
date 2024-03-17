@@ -53,12 +53,12 @@ export default function Todoform() {
             <h1>Daily To-Do List</h1>
             <div >
                 <form onSubmit={submitHandler}>
-                    <label>Add Todo:
-                        <input type="text" 
+                    
+                        <input type="text" placeholder='Add Todo'
                         onChange={(e) => setNewTodo(e.target.value)}
                         value={newTodo}
                         id='todo'/>
-                    </label>
+                    
                 <button>Add</button>
                 </form>
             </div>

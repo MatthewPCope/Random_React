@@ -5,6 +5,7 @@ body{
   justify-content: center;
   margin-top: 200px;
   font-family: 'Acme', sans-serif;
+  cursor: pointer;
 }
 
 button{
