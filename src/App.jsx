@@ -1,16 +1,17 @@
-import SignalList from "./components/SignalList"
-// import Todoform from "./components/Todoform"
 
+import Todoform from "./components/Todoform"
 
 
 function App() {
- 
-
+  
   return (
     <>
-      <SignalList />
+      <Todoform />
     </>
   )
 }
 
+
 export default App
+
+
