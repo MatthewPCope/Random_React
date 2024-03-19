@@ -1,18 +1,17 @@
+// import React from 'react';
 
-
-export default function TodoItem({ id, title, toggleTodo, deleteTodo }) {
-    return (
-    <>
-        <li>
-        <label>
-            {title}
-            <input
-            type="checkbox"
-            onChange={(e) => toggleTodo(id, e.target.checked)} // Pass id and checked state
-            />
-        </label>
-        <button onClick={() => deleteTodo(id)}>Delete</button>
-        </li>
-    </>
-    );
-}
+// export default function TodoItem({ todo, toggleTodo, deleteTodo }) {
+//   return (
+//     <li key={todo.id}>
+//       <label>
+//         <input
+//           type="checkbox"
+//           checked={todo.completed}
+//           onChange={() => toggleTodo(todo.id)}
+//         />
+//         {todo.completed ? <s>{todo.text}</s> : todo.text}
+//       </label>
+//       <button onClick={() => deleteTodo(todo.id)}>❌</button>
+//     </li>
+//   );
+// }

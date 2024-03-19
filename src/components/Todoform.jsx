@@ -1,53 +1,40 @@
-import { signal } from '@preact/signals';
-// import TodoList from './TodoList';
+import React from 'react';
+import { signal } from '@preact/signals-react';
 
-export default function Todoform() {
-    const newTodo = signal("")
-    const todos = signal([])
 
-    
 
-    const addTodo = () => {
-        todos.value = [...todos.value, { newTodo: newTodo.value }];
-        newTodo.value = ""; // Reset input value on add
-    }
+export default function TodoForm() {
+  const newTodo = signal('')
+  const todos =  signal([])
+  
 
-    // const toggleTodo = (id, completed) => {
-    //     todos.value = (
-    //         todos.value.map(todo => {
-    //             if (todo.id === id) {
-    //                 return { ...todo, completed };
-    //             }
-    //             return todo;
-    //         })
-    //     );
-    // };
+  const changeHandler = (e) => {
+    newTodo.value = e.target.value
+  }
+  console.log(e.target.value)
 
-    // const submitHandler = (e) => {
-    //     e.preventDefault();
-    //     if (newTodo.value === '') return;
-    //     addTodo(newTodo.value);
-    //     newTodo.value = ('');
-    // };
+  const addTodo = () => {
+        todos.value = [...todos.value, { text: newTodo.value, 
+        completed: false}]
+        newTodo.value = ''
+  }
 
-    const removeTodo = (id) => {
-        todos.value = (
-            todos.value.filter(todo => todo.id !== id)
-        );
-    };
-
-    return (
-        <>
-            <input value={newTodo.value} onChange={(e) => (newTodo.value = e.target.value)} />
-            <button onClick={addTodo}>Add</button>
-                <ul>
-                    {todos.value.map(todo => (
-                    <li>
-                        {todo.newTodo}{' '}
-                        <button onClick={() => removeTodo(todo)}>❌</button>
-                    </li>
-                    ))}
-                </ul>
-        </>
-    );
+  return (
+    <div className="form">
+      <h1>Daily To-Do List</h1>
+      <div>
+        
+          <input
+            type="text"
+            placeholder="Add Todo"
+            onChange={changeHandler}
+            value={newTodo.value}
+            
+          />
+          <button onClick={addTodo}>Add</button>
+        
+      </div>
+      
+    </div>
+  );
 }
